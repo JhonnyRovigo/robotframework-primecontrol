@@ -9,7 +9,7 @@ A suíte cobre os seguintes casos de uso:
 
 | Atividade    | Descrição                          |
 |--------------|------------------------------------|
-| CT001         Criar uma nova conta com sucesso    |
+| CT001        | Criar uma nova conta com sucesso   |
 | CT002        | Realizar login com sucesso         |
 | CT003        | Cadastrar cliente com sucesso      |
 | CT004        | Realizar logout com sucesso        |
