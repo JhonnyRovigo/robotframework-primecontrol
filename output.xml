@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.4 on win32)" generated="2025-06-26T14:43:11.203988" rpa="false" schemaversion="5">
+<suite id="s1" name="Recupera Senha" source="f:\Junior\tests\Recupera Senha.robot">
+<test id="s1-t1" name="Fluxo Completo de Recuperação de Senha" line="10">
+<kw name="Start Session" owner="base" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-06-26T14:43:12.058468" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "F:\\Junior\\browser\\traces\\temp\\f8785dbe-25bd-46fe-adcf-93bf8687c653"}</msg>
+<msg time="2025-06-26T14:43:12.077080" level="INFO">Starting Browser process C:\Python312\Lib\site-packages\Browser\wrapper\index.js using port 57537</msg>
+<msg time="2025-06-26T14:43:12.077080" level="INFO">Node startup parameters: ['node', 'C:\\Python312\\Lib\\site-packages\\Browser\\wrapper\\index.js', '57537']</msg>
+<msg time="2025-06-26T14:43:13.307640" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"F:\\Junior\\browser\\traces\\temp\\f8785dbe-25bd-46fe-adcf-93bf8687c653"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-06-26T14:43:12.057470" elapsed="1.251170"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-06-26T14:43:15.629395" level="INFO">Successfully initialized new page object and opened url: https://challenge.primecontrol.com.br/</msg>
+<msg time="2025-06-26T14:43:15.629395" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://challenge.primecontrol.com.br/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-06-26T14:43:13.309166" elapsed="2.320229"/>
+</kw>
+<status status="PASS" start="2025-06-26T14:43:12.056948" elapsed="3.573446"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-26T14:43:15.630394" level="INFO">${email} = 2d3c401f-606b-424e-adff-b301f2e2c37e@mailslurp.biz</msg>
+<var>${email}</var>
+<arg>2d3c401f-606b-424e-adff-b301f2e2c37e@mailslurp.biz</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-26T14:43:15.630394" elapsed="0.001242"/>
+</kw>
+<kw name="Recupera senha" owner="Reset">
+<kw name="Click" owner="Browser">
+<msg time="2025-06-26T14:43:15.632629" level="INFO">Clicks the element 'css=a[href='/app']'.</msg>
+<arg>css=a[href='/app']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-26T14:43:15.632629" elapsed="0.274339"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-26T14:43:15.907966" level="INFO">Clicks the element 'css=a[href='/app/resetsenha']'.</msg>
+<arg>css=a[href='/app/resetsenha']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-26T14:43:15.907966" elapsed="0.081649"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-26T14:43:15.990614" level="INFO">Fills the text '2d3c401f-606b-424e-adff-b301f2e2c37e@mailslurp.biz' in the given field.</msg>
+<arg>css=input[type="email"]</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-26T14:43:15.989615" elapsed="0.013326"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-26T14:43:16.003943" level="INFO">Clicks the element 'css=button:has-text("Enviar")'.</msg>
+<arg>css=button:has-text("Enviar")</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-26T14:43:16.003943" elapsed="0.046959"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-26T14:43:15.631636" elapsed="0.419266"/>
+</kw>
+<kw name="Esperar Email Com Link De Reset" owner="MailSlurp">
+<msg time="2025-06-26T14:43:25.260550" level="INFO">${link} = https://pagina-teste-prime.firebaseapp.com/__/auth/action?mode=resetPassword&amp;oobCode=L39ntL-VLVj0kNtlvRdi53REX6IIuzETETkzpQV2cuYAAAGXrVYkOw&amp;apiKey=AIzaSyCUUS83Lrw4y1pbUSB37i0y8yPt2l48gw0&amp;lang=en</msg>
+<var>${link}</var>
+<arg>${email}</arg>
+<status status="PASS" start="2025-06-26T14:43:16.051905" elapsed="9.208645"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2025-06-26T14:43:25.721917" level="INFO">Successfully opened URL https://pagina-teste-prime.firebaseapp.com/__/auth/action?mode=resetPassword&amp;oobCode=L39ntL-VLVj0kNtlvRdi53REX6IIuzETETkzpQV2cuYAAAGXrVYkOw&amp;apiKey=AIzaSyCUUS83Lrw4y1pbUSB37i0y8yPt2l48gw0&amp;lang=en</msg>
+<arg>${link}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-06-26T14:43:25.261549" elapsed="0.461373"/>
+</kw>
+<kw name="Preencher nova senha" owner="Reset">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-26T14:43:25.725447" level="INFO">Fills the text 'NovaSenha@123' in the given field.</msg>
+<arg>css=input[type="password"]</arg>
+<arg>${senha}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-26T14:43:25.723917" elapsed="0.861661"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-26T14:43:26.587580" level="INFO">Clicks the element 'text=Save'.</msg>
+<arg>text=Save</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-26T14:43:26.586580" elapsed="0.031260"/>
+</kw>
+<arg>NovaSenha@123</arg>
+<status status="PASS" start="2025-06-26T14:43:25.722922" elapsed="0.894918"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-26T14:43:26.641505" level="INFO">Text: 'Reset your password\n\nfor 2d3c401f-606b-424e-adff-b301f2e2c37e@mailslurp.biz\n\nNew password\nSAVE'</msg>
+<msg time="2025-06-26T14:43:26.641505" level="INFO">${page_text} = Reset your password
+
+for 2d3c401f-606b-424e-adff-b301f2e2c37e@mailslurp.biz
+
+New password
+SAVE</msg>
+<var>${page_text}</var>
+<arg>css=body</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-26T14:43:26.618837" elapsed="0.023696"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-06-26T14:43:26.716540" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-06-26T14:43:26.642533" elapsed="0.074007"/>
+</kw>
+<msg time="2025-06-26T14:43:26.720541" level="INFO">Set timeout to: 10000</msg>
+<msg time="2025-06-26T14:43:26.733245" level="INFO">Switching context to context=c7912ae9-7b10-4d1f-bbbf-67338120aecc in CURRENT</msg>
+<msg time="2025-06-26T14:43:26.741283" level="INFO">Successfully changed active context: context=c7912ae9-7b10-4d1f-bbbf-67338120aecc</msg>
+<msg time="2025-06-26T14:43:26.787621" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-06-26T14:43:12.054946" elapsed="14.661594"/>
+</test>
+<doc>Testa o fluxo de recuperação de senha</doc>
+<status status="PASS" start="2025-06-26T14:43:11.207503" elapsed="15.582639"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Recupera Senha" id="s1" pass="1" fail="0" skip="0">Recupera Senha</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
