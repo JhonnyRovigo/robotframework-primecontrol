@@ -7,13 +7,13 @@ A suíte cobre os seguintes casos de uso:
 
 ## 📋 Cenários de Testes
 
-| ID    | Descrição                           |
-|-------|-------------------------------------|
-| CT001 | Criar uma nova conta com sucesso    |
-| CT002 | Realizar login com sucesso          |
-| CT003 | Cadastrar cliente com sucesso       |
-| CT004 | Realizar logout com sucesso         |
-| CT005 | Recuperar senha com sucesso         |
+| Atividade    | Descrição                          |
+|--------------|------------------------------------|
+| CT001         Criar uma nova conta com sucesso    |
+| CT002        | Realizar login com sucesso         |
+| CT003        | Cadastrar cliente com sucesso      |
+| CT004        | Realizar logout com sucesso        |
+| CT005        | Recuperar senha com sucesso        |
 
 🚀 Pré-requisitos
 Para executar os testes, você precisa:
