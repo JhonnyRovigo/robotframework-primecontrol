@@ -1,5 +1,5 @@
 Suíte de Testes em Robot Framework para PrimeControl
-Este projeto contém automação de testes ponta a ponta para o sistema PrimeControl, desenvolvido com Robot Framework utilizando uma Browser Library (baseada em Playwright).
+Este projeto contém automação de testes para o sistema PrimeControl, desenvolvido com Robot Framework utilizando uma Browser Library (baseada em Playwright).
 
 📋 Cenários de Teste
 A suíte cobre os seguintes casos de uso:
